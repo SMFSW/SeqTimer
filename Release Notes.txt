@@ -1,0 +1,19 @@
+Sequential Timer Arduino Library
+2015-2015 SMFSW
+
+Feel free to share your thoughts @ xgarmanboziax@gmail.com about:
+	- issues encountered
+	- optimisations
+	- improvements & new functionalities
+
+------------
+
+Next:
+v1.0	?? October 2015:
+- doxygen commenting
+- adding detailed readme
+- adding zipped library
+
+Actual
+v0.1	18 October 2015:
+- First release
