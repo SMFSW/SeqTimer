@@ -10,14 +10,11 @@ SeqTimer	KEYWORD1
 #######################################
 # Methods and Functions (KEYWORD2)
 #######################################
-resetCount	KEYWORD2
-tstTimer	KEYWORD2
+init	KEYWORD2
+reloadTimer	KEYWORD2
+getTimer	KEYWORD2
 setPeriod	KEYWORD2
 getPeriod	KEYWORD2
-#enable	KEYWORD2
-#disable	KEYWORD2
-#isEnabled	KEYWORD2
-#isDisabled	KEYWORD2
 
 #######################################
 # Instances (KEYWORD2)

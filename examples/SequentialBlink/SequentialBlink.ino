@@ -13,7 +13,7 @@
   by SMSFSW
  */
 
-#include "SeqTimer.h"
+#include <SeqTimer.h>
 
 SeqTimer timer;				// Declare timer
 boolean  LEDState = LOW;	// State HIGH/LOW
@@ -24,12 +24,12 @@ void setup() {
 	pinMode(13, OUTPUT);
 
 	// initialize the timer period
-	timer.setPeriod(1000);
+	timer.init(1000);
 }
 
 // the loop function runs over and over again forever
 void loop() {
-	if (timer.tstTimer() == true)
+	if (timer.getTimer() == true)
 	{
 		LEDState = !LEDState;		// Change LED
 		digitalWrite(13, LEDState);	// turn the LED into LEDState
