@@ -22,12 +22,13 @@ SeqTimer timersec;		// Declare timer for seconds
 SeqTimer timermin;		// Declare timer for minutes
 SeqTimer timerhour;		// Declare timer for hours
 
-struct {
-	unsigned char hours = 23;
-	unsigned char minutes = 59;
-	unsigned char seconds = 30;
-} seqTime;
+typedef struct {
+	unsigned char hours;
+	unsigned char minutes;
+	unsigned char seconds;
+} Time;
 
+Time seqTime = { 23, 59, 30 };
 
 // the setup function runs once when you press reset or power the board
 void setup() {

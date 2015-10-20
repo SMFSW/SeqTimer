@@ -58,7 +58,7 @@
 void SeqTimer::init(uint16_t Period)
 {
 	setPeriod(Period);
-	reloadTimer(millis());
+	reloadTimer((uint16_t) millis());
 }
 
 void SeqTimer::init(uint16_t Period, uint16_t actTime)
@@ -69,11 +69,11 @@ void SeqTimer::init(uint16_t Period, uint16_t actTime)
 
 bool SeqTimer::getTimer()
 {
-	uint16_t	tempTime = millis();
+	uint16_t	tempTime = (uint16_t) millis();
 	
 	if ((tempTime - MemTime) >= TimerPeriod)
 	{
-		MemTime = tempTime;
+		reloadTimer(tempTime);
 		return true;
 	}
 	
@@ -84,7 +84,7 @@ bool SeqTimer::getTimer(uint16_t actTime)
 {
 	if ((actTime - MemTime) >= TimerPeriod)
 	{
-		MemTime = actTime;
+		reloadTimer(actTime);
 		return true;
 	}
 	

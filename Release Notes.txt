@@ -10,6 +10,12 @@ Feel free to share your thoughts @ xgarmanboziax@gmail.com about:
 
 ** Actual:
 
+v1.1	20 October 2015:
+- CascadingTimers.ino struct correct declaration (no warnings about initializers)
+- Call to inlined functions (produce the same code) as before
+
+** Old:
+
 v1.0	19 October 2015:
 - change function names
 - add init function
@@ -19,9 +25,6 @@ v1.0	19 October 2015:
 - doxygen commenting
 - add detailed readme
 - add zipped library
-
-
-** Old:
 
 v0.1	18 October 2015:
 - First release
