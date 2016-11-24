@@ -1,7 +1,7 @@
 /*!\file SeqTimer.cpp
 ** \author SMFSW
-** \version 1.0
-** \date 2015-2015
+** \version 1.2
+** \date 2015-2016
 ** \copyright GNU Lesser General Public License v2.1
 ** \brief Small piece of sequential Timer class (does not modify hw timers)
 ** \details The purpose here is to have a small piece of lib being able to manipulate simple timers (does not modify hw timers).
@@ -48,7 +48,7 @@
 #include <WProgram.h> 
 #endif
 
-#ifdef DBG_SEQTIMER
+#if defined(DBG_SEQTIMER)
 #include <HardwareSerial.h>
 #endif
 
@@ -71,9 +71,9 @@ bool SeqTimer::getTimer()
 {
 	uint16_t	tempTime = (uint16_t) millis();
 	
-	if ((tempTime - MemTime) >= TimerPeriod)
+	if ((uint16_t) (tempTime - MemTime) >= TimerPeriod)
 	{
-		reloadTimer(tempTime);
+		MemTime = tempTime;
 		return true;
 	}
 	
@@ -82,9 +82,9 @@ bool SeqTimer::getTimer()
 
 bool SeqTimer::getTimer(uint16_t actTime)
 {
-	if ((actTime - MemTime) >= TimerPeriod)
+	if ((uint16_t) (actTime - MemTime) >= TimerPeriod)
 	{
-		reloadTimer(actTime);
+		MemTime = actTime;
 		return true;
 	}
 	

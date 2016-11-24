@@ -8,7 +8,7 @@
 	
 	This example code is in the public domain.
 	
-	created 18 October 2015
+	modified 24 November 2016
 	by SMSFSW
  */
 
@@ -22,13 +22,13 @@ SeqTimer timersec;		// Declare timer for seconds
 SeqTimer timermin;		// Declare timer for minutes
 SeqTimer timerhour;		// Declare timer for hours
 
-typedef struct {
+typedef struct StructTime{
 	unsigned char hours;
 	unsigned char minutes;
 	unsigned char seconds;
-} Time;
+} StruTime;
 
-Time seqTime = { 23, 59, 30 };
+StruTime seqTime = { 23, 59, 30 };	// Init at 23H59mn30s to test all SeqTimer instances overflow 30s after sketch started
 
 // the setup function runs once when you press reset or power the board
 void setup() {

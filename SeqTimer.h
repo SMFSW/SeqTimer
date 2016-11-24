@@ -1,7 +1,7 @@
 /*!\file SeqTimer.h
 ** \author SMFSW
-** \version v1.0
-** \date 2015-2015
+** \version v1.2
+** \date 2015-2016
 ** \copyright GNU Lesser General Public License v2.1
 ** \brief Small piece of sequential Timer class (does not modify hw timers)
 ** \details The purpose here is to have a small piece of lib being able to manipulate simple timers (does not modify hw timers).

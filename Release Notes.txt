@@ -1,5 +1,5 @@
 Sequential Timer Arduino Library
-2015-2015 SMFSW
+2015-2016 SMFSW
 
 Feel free to share your thoughts @ xgarmanboziax@gmail.com about:
 	- issues encountered
@@ -10,11 +10,8 @@ Feel free to share your thoughts @ xgarmanboziax@gmail.com about:
 
 ** Actual:
 
-v1.1	20 October 2015:
-- CascadingTimers.ino struct correct declaration (no warnings about initializers)
-- Call to inlined functions (produce the same code) as before
-
-** Old:
+V1.2	24 November 2016:
+- fix 16 <-> 32 bits comparison issue (for 32bit architectures)
 
 v1.0	19 October 2015:
 - change function names
@@ -25,6 +22,9 @@ v1.0	19 October 2015:
 - doxygen commenting
 - add detailed readme
 - add zipped library
+
+
+** Old:
 
 v0.1	18 October 2015:
 - First release
