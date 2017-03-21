@@ -1,8 +1,8 @@
 /*!\file SeqTimer.cpp
 ** \author SMFSW
-** \version 1.2
-** \date 2015-2016
-** \copyright GNU Lesser General Public License v2.1
+** \version v2.0
+** \date 2015-2017
+** \copyright BSD 3-Clause License (c) 2015-2017, SMFSW
 ** \brief Small piece of sequential Timer class (does not modify hw timers)
 ** \details The purpose here is to have a small piece of lib being able to manipulate simple timers (does not modify hw timers).
 			Keep in mind that this type of timer is not as accurate as a hw timer.
@@ -28,17 +28,6 @@
 				- issues encountered
 				- optimisations
 				- improvements & new functionalities
-			
-			
-			This library is free software; you can redistribute it and/or
-			modify it under the terms of the GNU Lesser General Public
-			License as published by the Free Software Foundation; either
-			version 2.1 of the License, or (at your option) any later version.
-			
-			This library is distributed in the hope that it will be useful,
-			but WITHOUT ANY WARRANTY; without even the implied warranty of
-			MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
-			Lesser General Public License for more details.
 **/
 
 
@@ -55,13 +44,13 @@
 #include "SeqTimer.h"
 
 
-void SeqTimer::init(uint16_t Period)
+void SeqTimer::init(uint32_t Period)
 {
 	setPeriod(Period);
-	reloadTimer((uint16_t) millis());
+	reloadTimer(millis());
 }
 
-void SeqTimer::init(uint16_t Period, uint16_t actTime)
+void SeqTimer::init(uint32_t Period, uint32_t actTime)
 {
 	setPeriod(Period);
 	reloadTimer(actTime);
@@ -69,9 +58,9 @@ void SeqTimer::init(uint16_t Period, uint16_t actTime)
 
 bool SeqTimer::getTimer()
 {
-	uint16_t	tempTime = (uint16_t) millis();
+	uint32_t tempTime = millis();
 	
-	if ((uint16_t) (tempTime - MemTime) >= TimerPeriod)
+	if (tempTime - MemTime >= TimerPeriod)
 	{
 		MemTime = tempTime;
 		return true;
@@ -80,9 +69,9 @@ bool SeqTimer::getTimer()
 	return false;
 }
 
-bool SeqTimer::getTimer(uint16_t actTime)
+bool SeqTimer::getTimer(uint32_t actTime)
 {
-	if ((uint16_t) (actTime - MemTime) >= TimerPeriod)
+	if (actTime - MemTime >= TimerPeriod)
 	{
 		MemTime = actTime;
 		return true;

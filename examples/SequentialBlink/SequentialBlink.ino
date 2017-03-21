@@ -10,7 +10,7 @@
   This example code is in the public domain.
 
   modified 18 October 2015
-  by SMSFSW
+  by SMFSW
  */
 
 #include <SeqTimer.h>
