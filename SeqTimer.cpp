@@ -1,6 +1,6 @@
 /*!\file SeqTimer.cpp
 ** \author SMFSW
-** \version v2.0
+** \version v2.1
 ** \date 2015-2017
 ** \copyright BSD 3-Clause License (c) 2015-2017, SMFSW
 ** \brief Small piece of sequential Timer class (does not modify hw timers)
@@ -60,7 +60,7 @@ bool SeqTimer::getTimer()
 {
 	uint32_t tempTime = millis();
 	
-	if (tempTime - MemTime >= TimerPeriod)
+	if ((uint32_t) (tempTime - MemTime) >= TimerPeriod)
 	{
 		MemTime = tempTime;
 		return true;
@@ -71,7 +71,7 @@ bool SeqTimer::getTimer()
 
 bool SeqTimer::getTimer(uint32_t actTime)
 {
-	if (actTime - MemTime >= TimerPeriod)
+	if ((uint32_t) (actTime - MemTime) >= TimerPeriod)
 	{
 		MemTime = actTime;
 		return true;

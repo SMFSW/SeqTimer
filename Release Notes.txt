@@ -10,6 +10,9 @@ Feel free to share your thoughts @ xgarmanboziax@gmail.com about:
 
 ** Actual:
 
+V2.1	29 June 2017:
+- Added unsigned cast for time test (may have caused issues on 32b boards)
+
 V2.0	21 March 2017:
 - lib is now using 32 bits values (for much longer timers)
 - Moved to BSD 3-Clause License (less restrictive than GNU Lesser GPL 2.1)

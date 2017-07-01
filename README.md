@@ -1,4 +1,5 @@
 # SeqTimer
+
 Arduino sequential timer library (multi purpose small lib to handle timers without modifying any hw timer)
 
 The purpose here is to have a small piece of lib being able to manipulate simple timers (does not modify hw timers).
@@ -6,7 +7,8 @@ The purpose here is to have a small piece of lib being able to manipulate simple
 Keep in mind that this type of timer is not as accurate as a hw timer.
 This library is not intended to be used as a PWM generator for example, but to avoid using delay(s).
 
-## Usage:
+## Usage
+
 - Automatic class (can handle timers of 2^32 ms max with 1 ms granularity)
   - init(period) or setPeriod(period) if you want to execute the first step right away
   - in loop: if getTimer() returns true, period has elapsed
@@ -16,14 +18,17 @@ This library is not intended to be used as a PWM generator for example, but to a
   - in loop: if getTimer(actual time) returns true, period has elapsed
     - possibility to use reloadTimer(actual time) to reload compare register manually (finite running counters)
 
-## Examples included:
+## Examples included
+
 - SequentialBlink.ino: a proper way to handle simple timing on a blinking LED
 - CascadingTimers.ino: a demonstration how to use own base timers & cascading them to obtain a TimeCounter (not to be used as a real RTC)
 
-## Misc:
+## Misc
+
 Doxygen doc can be generated for the class using doxyfile
 
 Feel free to share your thoughts @ xgarmanboziax@gmail.com about:
+
 - issues encountered
 - optimisations
 - improvements & new functionalities
