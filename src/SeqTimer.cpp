@@ -1,6 +1,6 @@
 /*!\file SeqTimer.cpp
 ** \author SMFSW
-** \version v2.1
+** \version v2.2
 ** \date 2015-2017
 ** \copyright BSD 3-Clause License (c) 2015-2017, SMFSW
 ** \brief Small piece of sequential Timer class (does not modify hw timers)
@@ -32,9 +32,9 @@
 
 
 #if ARDUINO > 22
-#include <Arduino.h> 
+#include <Arduino.h>
 #else
-#include <WProgram.h> 
+#include <WProgram.h>
 #endif
 
 #if defined(DBG_SEQTIMER)
