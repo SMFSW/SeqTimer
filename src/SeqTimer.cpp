@@ -1,6 +1,6 @@
 /*!\file SeqTimer.cpp
 ** \author SMFSW
-** \version v2.2
+** \version v2.3
 ** \date 2015-2017
 ** \copyright BSD 3-Clause License (c) 2015-2017, SMFSW
 ** \brief Small piece of sequential Timer class (does not modify hw timers)
@@ -8,8 +8,8 @@
 			Keep in mind that this type of timer is not as accurate as a hw timer.
 			This library is not intended to be used as a PWM generator for example, but to avoid using delay(s).
 			
-			Usage: 
-			Automatic class (can handle timers of 65,653s max with 1 ms granularity)
+			Usage:
+			Automatic class (can handle timers of 2^32 ms max with 1 ms granularity)
 				- init(period) or setPeriod(period) if you want to execute the first step right away
 				- in loop: if getTimer() returns true, period has elapsed
 			
@@ -44,23 +44,23 @@
 #include "SeqTimer.h"
 
 
-void SeqTimer::init(uint32_t Period)
+void SeqTimer::init(const uint32_t Period)
 {
 	setPeriod(Period);
 	reloadTimer(millis());
 }
 
-void SeqTimer::init(uint32_t Period, uint32_t actTime)
+void SeqTimer::init(const uint32_t Period, const uint32_t actTime)
 {
 	setPeriod(Period);
 	reloadTimer(actTime);
 }
 
-bool SeqTimer::getTimer()
+bool SeqTimer::getTimer(void)
 {
 	uint32_t tempTime = millis();
 	
-	if ((uint32_t) (tempTime - MemTime) >= TimerPeriod)
+	if (tempTime - MemTime >= TimerPeriod)
 	{
 		MemTime = tempTime;
 		return true;
@@ -69,9 +69,9 @@ bool SeqTimer::getTimer()
 	return false;
 }
 
-bool SeqTimer::getTimer(uint32_t actTime)
+bool SeqTimer::getTimer(const uint32_t actTime)
 {
-	if ((uint32_t) (actTime - MemTime) >= TimerPeriod)
+	if (actTime - MemTime >= TimerPeriod)
 	{
 		MemTime = actTime;
 		return true;

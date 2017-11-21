@@ -1,6 +1,6 @@
 /*!\file SeqTimer.h
 ** \author SMFSW
-** \version v2.2
+** \version v2.3
 ** \date 2015-2017
 ** \copyright BSD 3-Clause License (c) 2015-2017, SMFSW
 ** \brief Small piece of sequential Timer class (does not modify hw timers)
@@ -9,7 +9,7 @@
 			This library is not intended to be used as a PWM generator for example, but to avoid using delay(s).
 			
 			Usage: 
-			Automatic class (can handle timers of 65,653s max with 1 ms granularity)
+			Automatic class (can handle timers of 2^32 ms max with 1 ms granularity)
 				- init(period) or setPeriod(period) if you want to execute the first step right away
 				- in loop: if getTimer() returns true, period has elapsed
 			
@@ -59,14 +59,14 @@ public:
 	**	\param [in] Period - Period of the timer (assuming it represents milliseconds to use getTimer without argument)
 	**	\return nothing
 	**/
-	void init(uint32_t Period);
+	void init(const uint32_t Period);
 	
 	/*!	\brief Initialisation routine
 	**	\param [in] Period - Period of the timer (assuming it represents milliseconds to use getTimer without argument)
 	**	\param [in] actTime - Actual time in given representation
 	**	\return nothing
 	**/
-	void init(uint32_t Period, uint32_t actTime);
+	void init(const uint32_t Period, const uint32_t actTime);
 	
 	/*!	\brief Test timer period against actual time in milliseconds
 	**	\return Test validity
@@ -81,14 +81,14 @@ public:
 	**	\retval true - Count has reached (or is over) the period set
 	**	\retval false - Count has not reached the period set
 	**/
-	bool getTimer(uint32_t actTime);
+	bool getTimer(const uint32_t actTime);
 	
 	/*!	\brief Reload last memorised time (manually)
 	**	\note Can be useful if using own resetable counter as base time
 	**	\param [in] actTime - Actual time in given representation
 	**	\return nothing
 	**/
-	void reloadTimer(uint32_t actTime) __attribute__((always_inline)) {
+	void reloadTimer(const uint32_t actTime) __attribute__((always_inline)) {
 		MemTime = actTime;
 	}
 	
@@ -99,14 +99,14 @@ public:
 						- can be own base time coded Period when using getTimer with argument
 	**	\return nothing
 	**/
-	void setPeriod(uint32_t Period) __attribute__((always_inline)) {
+	void setPeriod(const uint32_t Period) __attribute__((always_inline)) {
 		TimerPeriod = Period;
 	}
 	
 	/*!	\brief Get the period of the timer
 	**	\return Period value on uint16 type
 	**/
-	uint32_t getPeriod() __attribute__((always_inline)) {
+	uint32_t getPeriod(void) __attribute__((always_inline)) {
 		return TimerPeriod;
 	}
 };
