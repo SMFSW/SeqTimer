@@ -1,0 +1,5 @@
+<map id="setup" name="setup">
+<area shape="rect" id="node2" href="$class_seq_timer.html#a0f43dd376dd3821409ef21fc14bb9bd2" title="Initialisation routine. " alt="" coords="110,31,213,57"/>
+<area shape="rect" id="node3" href="$class_seq_timer.html#a14ccdc1ba5bba2d253d81d1ca0e475b0" title="Set the period of the timer. " alt="" coords="268,5,409,32"/>
+<area shape="rect" id="node4" href="$class_seq_timer.html#ae9591b16e23aa130b5740cfe2403cdd9" title="Reload last memorised time (manually) " alt="" coords="261,56,416,83"/>
+</map>

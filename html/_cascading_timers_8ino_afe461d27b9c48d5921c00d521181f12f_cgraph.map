@@ -1,0 +1,4 @@
+<map id="loop" name="loop">
+<area shape="rect" id="node2" href="$class_seq_timer.html#aedeb0c1706d4a5bb72552a1690dcaccd" title="Test timer period against actual time in milliseconds. " alt="" coords="110,5,247,32"/>
+<area shape="rect" id="node3" href="$class_seq_timer.html#ae9591b16e23aa130b5740cfe2403cdd9" title="Reload last memorised time (manually) " alt="" coords="101,56,256,83"/>
+</map>

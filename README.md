@@ -1,1 +1,0 @@
-"SeqTimer gh-pages branch" 

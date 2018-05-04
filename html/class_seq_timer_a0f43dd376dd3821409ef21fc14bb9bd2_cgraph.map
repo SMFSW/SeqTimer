@@ -1,0 +1,4 @@
+<map id="SeqTimer::init" name="SeqTimer::init">
+<area shape="rect" id="node2" href="$class_seq_timer.html#a14ccdc1ba5bba2d253d81d1ca0e475b0" title="Set the period of the timer. " alt="" coords="164,5,305,32"/>
+<area shape="rect" id="node3" href="$class_seq_timer.html#ae9591b16e23aa130b5740cfe2403cdd9" title="Reload last memorised time (manually) " alt="" coords="157,56,312,83"/>
+</map>

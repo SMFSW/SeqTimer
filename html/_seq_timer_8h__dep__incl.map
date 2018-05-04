@@ -1,0 +1,5 @@
+<map id="src/SeqTimer.h" name="src/SeqTimer.h">
+<area shape="rect" id="node2" href="$_cascading_timers_8ino.html" title="examples/CascadingTimers\l/CascadingTimers.ino" alt="" coords="5,81,189,122"/>
+<area shape="rect" id="node3" href="$_sequential_blink_8ino.html" title="examples/SequentialBlink\l/SequentialBlink.ino" alt="" coords="214,81,385,122"/>
+<area shape="rect" id="node4" href="$_seq_timer_8cpp.html" title="Small piece of sequential Timer class (does not modify hw timers) " alt="" coords="411,88,536,115"/>
+</map>
