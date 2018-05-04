@@ -1,4 +1,4 @@
-# SeqTimer
+# SeqTimer [![Build Status](https://travis-ci.org/SMFSW/SeqTimer.svg?branch=master)](https://travis-ci.org/SMFSW/SeqTimer)
 
 Arduino sequential timer library (multi purpose small lib to handle timers without modifying any hw timer)
 
@@ -10,25 +10,25 @@ This library is not intended to be used as a PWM generator for example, but to a
 ## Usage
 
 - Automatic class (can handle timers of 2^32 ms max with 1 ms granularity)
-  - init(period) or setPeriod(period) if you want to execute the first step right away
-  - in loop: if getTimer() returns true, period has elapsed
+  - `init(period)` or `setPeriod(period)` if you want to execute the first step right away
+  - in loop: if `getTimer()` returns `true`, period has elapsed
 
 - Manual class (can handle every uint16 type as time base)
-  - init (period, actual time) to set the period and load the compare register with the given actual time
-  - in loop: if getTimer(actual time) returns true, period has elapsed
-    - possibility to use reloadTimer(actual time) to reload compare register manually (finite running counters)
+  - `init(period, actual time)` to set the period and load the compare register with the given actual time
+  - in loop: if `getTimer(actual time)` returns `true`, period has elapsed
+    - possibility to use `reloadTimer(actual time)` to reload compare register manually (finite running counters)
 
 ## Examples included
 
-- SequentialBlink.ino: a proper way to handle simple timing on a blinking LED
-- CascadingTimers.ino: a demonstration how to use own base timers & cascading them to obtain a TimeCounter (not to be used as a real RTC)
+- [SequentialBlink.ino](examples/SequentialBlink/SequentialBlink.ino): a proper way to handle simple timing on a blinking LED
+- [CascadingTimers.ino](examples/CascadingTimers/CascadingTimers.ino): a demonstration how to use own base timers & cascading them to obtain a TimeCounter (not to be used as a real RTC)
 
-## Misc
+## Documentation
 
-Doxygen doc can be generated for the class using doxyfile
+Doxygen doc can be generated using "Doxyfile".
 
-Feel free to share your thoughts @ xgarmanboziax@gmail.com about:
+See [generated documentation](https://smfsw.github.io/SeqTimer/)
 
-- issues encountered
-- optimisations
-- improvements & new functionalities
+## Release Notes
+
+See [release notes](ReleaseNotes.md)
