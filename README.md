@@ -1,4 +1,4 @@
-# SeqTimer [![Build Status](https://travis-ci.org/SMFSW/SeqTimer.svg?branch=master)](https://travis-ci.org/SMFSW/SeqTimer)
+# SeqTimer [![Build Status](https://travis-ci.com/SMFSW/SeqTimer.svg?branch=master)](https://travis-ci.com/SMFSW/SeqTimer)
 
 Arduino sequential timer library (multi purpose small lib to handle timers without modifying any hw timer)
 
