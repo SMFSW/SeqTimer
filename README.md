@@ -1,4 +1,4 @@
-# SeqTimer
+# SeqTimer [![CodeFactor](https://www.codefactor.io/repository/github/smfsw/seqtimer/badge)](https://www.codefactor.io/repository/github/smfsw/seqtimer)
 
 Arduino sequential timer library (multi purpose small lib to handle timers without modifying any hw timer)
 
